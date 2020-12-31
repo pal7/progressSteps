@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Outline&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --fill-color: #d81e5b;
+  --empty-color: #331832;
+  --tart-orange: #f0544f;
+  --papaya-whip: #fdf0d5;
+  --opal: #c6d8d3;
+}
+
+body {
+  /* font-family: "Roboto", sans-serif; */
+  font-family: "Bungee Outline", cursive;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--opal);
+}
+
+.container {
+  text-align: center;
+}
+
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-bottom: 30px;
+  max-width: 100%;
+  width: 700px;
+}
+
+.progress-container::before {
+  content: "";
+  background-color: var(--empty-color);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 5px;
+  width: 95%;
+  z-index: -1;
+}
+
+.progress {
+  background-color: var(--fill-color);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 5px;
+  width: 0%;
+  max-width: 95%;
+  z-index: -1;
+  transition: 0.4s ease;
+}
+
+.circle {
+  background-color: var(--papaya-whip);
+  color: var(--empty-color);
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  font-size: 30px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid var(--empty-color);
+  transition: 0.4s ease-in;
+  transition-delay: 0.2s;
+}
+
+.circle.active {
+  border-color: var(--fill-color);
+}
+
+.btn {
+  background-color: var(--fill-color);
+  color: var(--papaya-whip);
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+  padding: 10px 30px;
+  margin: 50px 0px 10px 15px;
+  font-size: 26px;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.btn:disabled {
+  background-color: var(--empty-color);
+  cursor: not-allowed;
+}
